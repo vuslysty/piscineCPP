@@ -1,7 +1,3 @@
-//
-// Created by Vladyslav USLYSTYI on 2019-06-24.
-//
-
 #include <iomanip>
 #include "PhoneBook.hpp"
 
@@ -9,8 +5,8 @@ PhoneBook::PhoneBook(void) : _count(0) {}
 
 void	PhoneBook::exitFunc(void)
 {
+	std::cout << std::endl;
 	std::cout << "Bye bye my little friend!" << std::endl;
-	exit (0);
 }
 
 void	PhoneBook::addFunc(void)
@@ -46,6 +42,7 @@ void	PhoneBook::searchFunc()
 	if (_count == 0)
 	{
 		std::cout << "Your phone book is empty." << std::endl;
+		std::cout << std::endl;
 		return ;
 	}
 	show_header_row();
@@ -54,12 +51,17 @@ void	PhoneBook::searchFunc()
 		_contact[i].showShortContactList(i + 1);
 		i++;
 	}
+	std::cout << std::endl;
 	std::cout << "Choose contact's index to show all information about its: ";
 	std::getline(std::cin, tmp, '\n');
-	i = std::stoi(tmp);
-	if (i <= _count && i > 0 && tmp.length() == 1 && isdigit(tmp[0]))
-		_contact[i - 1].showLongContactList();
-	else
-		std::cout << "Chosen contact's index is not exist." << std::endl;
-	std::cout << std::endl;
+
+	if (!std::cin.eof())
+	{
+		i = std::stoi(tmp);
+		if (i <= _count && i > 0 && tmp.length() == 1 && isdigit(tmp[0]))
+			_contact[i - 1].showLongContactList();
+		else
+			std::cout << "Chosen contact's index is not exist." << std::endl;
+		std::cout << std::endl;
+	}
 }
