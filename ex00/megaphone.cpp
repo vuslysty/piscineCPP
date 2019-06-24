@@ -13,6 +13,7 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			str = argv[i++];
+			str.length();
 			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
 			std::cout << str;
 		}
