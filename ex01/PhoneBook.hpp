@@ -7,15 +7,14 @@
 
 class PhoneBook
 {
-	Contact	_contact[MAX_CONTACTS];
 	int		_count;
+	Contact	_contact[MAX_CONTACTS];
 
 public:
 	PhoneBook(void);
 	void	exitFunc(void);
 	void	addFunc(void);
 	void	searchFunc(void);
-
 };
 
 

@@ -6,7 +6,6 @@
 
 class Contact
 {
-	int			index;
 	std::string	first_name;
 	std::string last_name;
 	std::string nickname;
@@ -20,7 +19,9 @@ class Contact
 
 public:
 
-	void	addContact(int index);
+	void	addContact();
+	void	showShortContactList(int index);
+	void	showLongContactList();
 };
 
 
