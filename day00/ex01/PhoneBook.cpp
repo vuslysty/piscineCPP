@@ -55,13 +55,11 @@ void	PhoneBook::searchFunc()
 	std::cout << "Choose contact's index to show all information about its: ";
 	std::getline(std::cin, tmp, '\n');
 
-	if (!std::cin.eof())
-	{
-		i = std::stoi(tmp);
-		if (i <= _count && i > 0 && tmp.length() == 1 && isdigit(tmp[0]))
-			_contact[i - 1].showLongContactList();
-		else
-			std::cout << "Chosen contact's index is not exist." << std::endl;
-		std::cout << std::endl;
-	}
+	i = tmp[0] - '0';
+	if (i <= _count && i > 0 && tmp.length() == 1)
+		_contact[i - 1].showLongContactList();
+	else
+		std::cout << "Chosen contact's index is not exist." << std::endl;
+	std::cout << std::endl;
+
 }

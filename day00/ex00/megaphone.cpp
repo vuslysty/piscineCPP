@@ -1,6 +1,18 @@
 #include <iostream>
 
-int	main(int argc, char **argv)
+void	strToUpper(std::string &str)
+{
+	unsigned int		i;
+
+	i = 0;
+	while (i < str.length())
+	{
+		str[i] = toupper(str[i]);
+		i++;
+	}
+}
+
+int		main(int argc, char **argv)
 {
 	std::string	str;
 	int 		i;
@@ -13,8 +25,7 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			str = argv[i++];
-			str.length();
-			std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+			strToUpper(str);
 			std::cout << str;
 		}
 	}
