@@ -5,15 +5,12 @@
 
 #include <iostream>
 #include "Brain.hpp"
+#include "Human.hpp"
 
 int main()
 {
-	Brain	brain;
-	Brain	brain2;
-	Brain	brain3;
+	Human	bob;
 
-
-	std::cout << brain.identity() << std::endl;
-	std::cout << brain2.identity() << std::endl;
-	std::cout << brain3.identity() << std::endl;
+	std::cout << bob.identify() << std::endl;
+	std::cout << bob.getBrain().identify() << std::endl;
 }

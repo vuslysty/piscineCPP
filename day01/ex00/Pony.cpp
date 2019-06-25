@@ -22,7 +22,7 @@ Pony::~Pony()
 
 void Pony::getInfo()
 {
-	std::cout << "Pony's name is " << this->name << std::endl;
+	std::cout << "Pony's _name is " << this->name << std::endl;
 	std::cout << "Breed is " << this->breed << std::endl;
 	std::cout << "Age: " << this->age << " years old" << std::endl;
 	std::cout << "Sex: ";

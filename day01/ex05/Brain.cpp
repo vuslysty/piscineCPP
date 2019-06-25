@@ -6,7 +6,7 @@
 #include <sstream>
 #include "Brain.hpp"
 
-void	strToUpper(std::string &str)
+static void	strToUpper(std::string &str)
 {
 	unsigned int		i;
 
@@ -18,7 +18,7 @@ void	strToUpper(std::string &str)
 	}
 }
 
-std::string	Brain::identity()
+std::string	Brain::identify() const
 {
 	std::stringstream	address;
 	std::string			hexcode;

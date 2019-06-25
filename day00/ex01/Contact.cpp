@@ -3,9 +3,9 @@
 
 void	Contact::addContact()
 {
-	std::cout << "Enter a first name: ";
+	std::cout << "Enter a first _name: ";
 	std::getline(std::cin, first_name, '\n');
-	std::cout << "Enter a last name: ";
+	std::cout << "Enter a last _name: ";
 	std::getline(std::cin, last_name, '\n');
 	std::cout << "Enter a nickname: ";
 	std::getline(std::cin, nickname, '\n');
@@ -52,8 +52,8 @@ void Contact::showShortContactList(int index)
 
 void Contact::showLongContactList()
 {
-	std::cout << "First name :" << first_name << std::endl;
-	std::cout << "Last name :" << last_name << std::endl;
+	std::cout << "First _name :" << first_name << std::endl;
+	std::cout << "Last _name :" << last_name << std::endl;
 	std::cout << "Nickname :" << nickname << std::endl;
 	std::cout << "Login :" << login << std::endl;
 	std::cout << "Postal address :" << postal_address << std::endl;

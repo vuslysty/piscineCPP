@@ -27,8 +27,8 @@ static void	show_header_row()
 {
 	std::cout << '|';
 	std::cout << std::setw (11) << "index|";
-	std::cout << std::setw (11) << "first name|";
-	std::cout << std::setw (11) << "last name|";
+	std::cout << std::setw (11) << "first _name|";
+	std::cout << std::setw (11) << "last _name|";
 	std::cout << std::setw (11) << "nickname|";
 	std::cout << std::endl;
 }

@@ -5,15 +5,11 @@
 #ifndef PISCINECPP_BRAIN_HPP
 #define PISCINECPP_BRAIN_HPP
 
-
 #include <string>
 
 class Brain
 {
-//	int	memoryMB;
 public:
-	std::string	identity();
+	std::string	identify() const;
 };
-
-
 #endif //PISCINECPP_BRAIN_HPP

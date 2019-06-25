@@ -6,8 +6,16 @@
 #define PISCINECPP_HUMAN_HPP
 
 
+#include "Brain.hpp"
+
 class Human
 {
+	const Brain	brain;
+
+public:
+
+	const Brain &getBrain() const;
+	std::string	identify() const;
 
 };
 

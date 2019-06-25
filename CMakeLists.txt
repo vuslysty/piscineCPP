@@ -17,6 +17,6 @@ add_executable(day01_ex02 day01/ex02/Zombie.cpp day01/ex02/Zombie.hpp day01/ex02
 add_executable(day01_ex03 day01/ex03/Zombie.cpp day01/ex03/Zombie.hpp day01/ex03/main.cpp day01/ex03/ZombieHorde.cpp day01/ex03/ZombieHorde.hpp)
 add_executable(day01_ex04 day01/ex04/ex04.cpp)
 add_executable(day01_ex05 day01/ex05/Brain.cpp day01/ex05/Brain.hpp day01/ex05/Human.cpp day01/ex05/Human.hpp day01/ex05/main.cpp)
-#add_executable(day01_ex06)
+add_executable(day01_ex06 day01/ex06/Weapon.cpp day01/ex06/Weapon.hpp day01/ex06/HumanA.cpp day01/ex06/HumanA.hpp day01/ex06/HumanB.cpp day01/ex06/HumanB.hpp day01/ex06/main.cpp)
 #add_executable(day01_ex07)
 #add_executable(day01_ex08)
