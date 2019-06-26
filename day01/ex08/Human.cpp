@@ -39,6 +39,10 @@ void	Human::action(std::string const &action_name, std::string const &target)
 	for (int i = 0; i < 3; i++)
 	{
 		if (action_name == names[i])
-			Human::f[i](target);
+		{
+			(this->*f[i])(target);
+			return ;
+		}
 	}
+	std::cout << "Action \"" << action_name << "\" unavailable." << std::endl;
 }
