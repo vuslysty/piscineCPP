@@ -26,5 +26,5 @@ add_executable(piscineCPP00 main.cpp)
 #day02
 add_executable(day02_ex00 day02/ex00/Fixed.cpp day02/ex00/Fixed.hpp day02/ex00/main.cpp)
 add_executable(day02_ex01 day02/ex01/Fixed.cpp day02/ex01/Fixed.hpp day02/ex01/main.cpp)
-#add_executable(day02_ex02)
+add_executable(day02_ex02 day02/ex02/Fixed.cpp day02/ex02/Fixed.hpp day02/ex02/main.cpp)
 #add_executable(day02_ex03)
