@@ -16,6 +16,10 @@ class Fsm
 	List		*list;
 	int 		startIter;
 	int			iter;
+	t_oper		lastOp;
+
+	int		(Fsm::*stateF[7])();
+	bool	(Fsm::*isSomeChar[11])(char c);
 
 public:
 	Fsm(std::string const &str);
@@ -35,6 +39,7 @@ public:
 	bool	isCloseScope(char c);
 	bool	isWhiteSpase(char c);
 	bool	isEOS(char c);
+	bool	isElse(char c);
 
 	int		stateNumber();
 	int		statePlus();
@@ -44,10 +49,9 @@ public:
 	int		stateOpenScope();
 	int		stateCloseScope();
 
+	int 	getCondition(char c);
 
-	static int 	fsm[
-			][];
-	static bool	(Fsm::*isSomeChar[10])(char c);
+	static int 	fsm[7][11];
 };
 
 

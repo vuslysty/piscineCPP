@@ -22,6 +22,7 @@ bool	Fsm::isPlus(char c)
 
 bool	Fsm::isMinus(char c)
 {
+
 	return (c == '-');
 }
 
@@ -53,4 +54,11 @@ bool	Fsm::isWhiteSpase(char c)
 bool	Fsm::isEOS(char c)
 {
 	return (c == '\0');
+}
+
+bool	Fsm::isElse(char c)
+{
+	if (c)
+		;
+	return (1);
 }

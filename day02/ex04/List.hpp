@@ -12,11 +12,11 @@ typedef enum e_oper {NUMBER, PLUS, MINUS, DIVISION, MULT, OPEN_SCOPE, CLOSE_SCOP
 
 class List
 {
+public:
 	t_oper		oper;
 	std::string	num_str;
-	List		*next;
 
-public:
+	List		*next;
 
 	static int nbOpenScopes;
 	static int nbCloseScopes;
