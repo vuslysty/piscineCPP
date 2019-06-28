@@ -5,7 +5,10 @@ set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror")
 set(CMAKE_CXX_STANDARD 98)
 
+
 add_executable(piscineCPP00 main.cpp)
+
+#day00
 #add_executable(megaphone day00/ex00/megaphone.cpp)
 #add_executable(PhoneBook day00/ex01/Contact.cpp day00/ex01/Contact.hpp day00/ex01/PhoneBook.cpp day00/ex01/PhoneBook.hpp day00/ex01/main.cpp)
 #add_executable(Account day00/ex02/Account.class.cpp day00/ex02/tests.cpp day01/ex10/main.cpp)
@@ -24,7 +27,13 @@ add_executable(piscineCPP00 main.cpp)
 #add_executable(day01_ex10 day01/ex10/main.cpp day01/ex10/Cat.cpp day01/ex10/Cat.hpp)
 
 #day02
-add_executable(day02_ex00 day02/ex00/Fixed.cpp day02/ex00/Fixed.hpp day02/ex00/main.cpp)
-add_executable(day02_ex01 day02/ex01/Fixed.cpp day02/ex01/Fixed.hpp day02/ex01/main.cpp)
-add_executable(day02_ex02 day02/ex02/Fixed.cpp day02/ex02/Fixed.hpp day02/ex02/main.cpp)
-add_executable(eval_expr day02/ex04/Fixed.cpp day02/ex04/Fixed.hpp day02/ex04/main.cpp day02/ex04/List.cpp day02/ex04/List.hpp day02/ex04/Fsm.cpp day02/ex04/Fsm.hpp day02/ex04/isSomeChar.cpp day02/ex04/stateCheck.cpp)
+#add_executable(day02_ex00 day02/ex00/Fixed.cpp day02/ex00/Fixed.hpp day02/ex00/main.cpp)
+#add_executable(day02_ex01 day02/ex01/Fixed.cpp day02/ex01/Fixed.hpp day02/ex01/main.cpp)
+#add_executable(day02_ex02 day02/ex02/Fixed.cpp day02/ex02/Fixed.hpp day02/ex02/main.cpp)
+#add_executable(eval_expr day02/ex04/Fixed.cpp day02/ex04/Fixed.hpp day02/ex04/main.cpp day02/ex04/List.cpp day02/ex04/List.hpp day02/ex04/Fsm.cpp day02/ex04/Fsm.hpp day02/ex04/isSomeChar.cpp day02/ex04/stateCheck.cpp)
+
+#day03
+add_executable(day03_ex00 day03/FragTrap.cpp day03/FragTrap.hpp day03/main.cpp)
+#add_executable(day03_ex01)
+#add_executable(day03_ex02)
+#add_executable(day03_ex03)

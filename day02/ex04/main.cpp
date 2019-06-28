@@ -15,21 +15,26 @@ float bits[8] =
 			0.5, 0.25, 0.125, 0.0625, 0.03125, 0.015625, 0.0078125, 0.00390625
 		};
 
-int		isNorm(List *list)
-{
-	if (list->nbOpenScopes != list->nbCloseScopes)
-	{
-		std::cout << "error" << std::endl;
-		exit(0);
-	}
+//int		isNorm(List *list)
+//{
+//	if (list->nbOpenScopes != list->nbCloseScopes)
+//	{
+//		std::cout << "error" << std::endl;
+//		exit(0);
+//	}
+//
+//	while (list->next)
+//	{
+//		if (MATH_OP(list) && MATH_OP(list->next)
+//			std::cout << "error" << std::endl;
+////		else (list-)
+//
+//	}
+//}
 
-	while (list->next)
-	{
-		if (MATH_OP(list) && MATH_OP(list->next)
-			std::cout << "error" << std::endl;
-//		else (list-)
-		
-	}
+void startFromScope(List *list)
+{
+	
 }
 
 
