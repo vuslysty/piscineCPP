@@ -33,7 +33,7 @@ add_executable(piscineCPP00 main.cpp)
 #add_executable(eval_expr day02/ex04/Fixed.cpp day02/ex04/Fixed.hpp day02/ex04/main.cpp day02/ex04/List.cpp day02/ex04/List.hpp day02/ex04/Fsm.cpp day02/ex04/Fsm.hpp day02/ex04/isSomeChar.cpp day02/ex04/stateCheck.cpp)
 
 #day03
-add_executable(day03_ex00 day03/FragTrap.cpp day03/FragTrap.hpp day03/main.cpp)
-#add_executable(day03_ex01)
-#add_executable(day03_ex02)
+add_executable(day03_ex00 day03/ex00/FragTrap.cpp day03/ex00/FragTrap.hpp day03/ex00/main.cpp)
+add_executable(day03_ex01 day03/ex01/FragTrap.cpp day03/ex01/FragTrap.hpp day03/ex01/main.cpp day03/ex01/ScavTrap.cpp day03/ex01/ScavTrap.hpp)
+add_executable(day03_ex02 day03/ex02/FragTrap.cpp day03/ex02/FragTrap.hpp day03/ex02/main.cpp day03/ex02/ScavTrap.cpp day03/ex02/ScavTrap.hpp day03/ex02/ClapTrap.cpp day03/ex02/ClapTrap.hpp)
 #add_executable(day03_ex03)

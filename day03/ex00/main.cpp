@@ -6,9 +6,14 @@
 
 int main()
 {
-	srand (time(nullptr));
+	srand (time(nullptr) * time(nullptr));
 
 	FragTrap	frag("R2D2");
+
+	FragTrap	a(frag);
+
+	a.meleeAttack("Oleh");
+
 
 	frag.vaulthunter_dot_exe("Robocop");
 	frag.takeDamage(25);
@@ -31,4 +36,5 @@ int main()
 
 	frag.vaulthunter_dot_exe("Cheburashka");
 
+	return (0);
 }
