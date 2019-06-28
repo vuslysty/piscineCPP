@@ -13,9 +13,11 @@ int main()
 	srand (time(nullptr) * time(nullptr));
 
 	SuperTrap	super("IVAN");
-	NinjaTrap	ninjaTrap("Yoko");
 
-	super.ninjaShoebox(ninjaTrap);
+
+//	NinjaTrap	ninjaTrap("Yoko");
+
+//	super.ninjaShoebox(ninjaTrap);
 
 
 	return (0);

@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror")
 set(CMAKE_CXX_STANDARD 98)
 
 
-add_executable(piscineCPP00 main.cpp)
+#add_executable(piscineCPP00 main.cpp)
 
 #day00
 #add_executable(megaphone day00/ex00/megaphone.cpp)
@@ -37,4 +37,9 @@ add_executable(piscineCPP00 main.cpp)
 #add_executable(day03_ex01 day03/ex01/FragTrap.cpp day03/ex01/FragTrap.hpp day03/ex01/main.cpp day03/ex01/ScavTrap.cpp day03/ex01/ScavTrap.hpp)
 #add_executable(day03_ex02 day03/ex02/FragTrap.cpp day03/ex02/FragTrap.hpp day03/ex02/main.cpp day03/ex02/ScavTrap.cpp day03/ex02/ScavTrap.hpp day03/ex02/ClapTrap.cpp day03/ex02/ClapTrap.hpp)
 #add_executable(day03_ex03 day03/ex03/FragTrap.cpp day03/ex03/FragTrap.hpp day03/ex03/main.cpp day03/ex03/ScavTrap.cpp day03/ex03/ScavTrap.hpp day03/ex03/ClapTrap.cpp day03/ex03/ClapTrap.hpp day03/ex03/NinjaTrap.cpp day03/ex03/NinjaTrap.hpp)
-add_executable(day03_ex04 day03/ex04/FragTrap.cpp day03/ex04/FragTrap.hpp day03/ex04/main.cpp day03/ex04/ScavTrap.cpp day03/ex04/ScavTrap.hpp day03/ex04/ClapTrap.cpp day03/ex04/ClapTrap.hpp day03/ex04/NinjaTrap.cpp day03/ex04/NinjaTrap.hpp day03/ex04/SuperTrap.cpp day03/ex04/SuperTrap.hpp)
+#add_executable(day03_ex04 day03/ex04/FragTrap.cpp day03/ex04/FragTrap.hpp day03/ex04/main.cpp day03/ex04/ScavTrap.cpp day03/ex04/ScavTrap.hpp day03/ex04/ClapTrap.cpp day03/ex04/ClapTrap.hpp day03/ex04/NinjaTrap.cpp day03/ex04/NinjaTrap.hpp day03/ex04/SuperTrap.cpp day03/ex04/SuperTrap.hpp)
+
+#day04
+add_executable(day04_ex00 day04/ex00/Sorcerer.cpp day04/ex00/Sorcerer.hpp)
+#add_executable(day04_ex01)
+#add_executable(day04_ex02)
