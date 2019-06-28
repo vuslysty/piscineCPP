@@ -7,13 +7,12 @@
 
 FragTrap::FragTrap() {}
 
-FragTrap::FragTrap(std::string const &name) : name(name)
+FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 {
 	hitPoints = 100;
 	maxHitPoints = 100;
 	energyPoints = 100;
 	maxEnergyPoints = 100;
-	level = 1;
 	meleeAttackDamage = 30;
 	rangedAttackDamage = 20;
 	lightJabAttackDamage = 10;
@@ -30,7 +29,7 @@ FragTrap::FragTrap(std::string const &name) : name(name)
 	std::cout << "FR4G-TP constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &src)
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src)
 {
 	std::cout << "FR4G-TP copy constructor called" << std::endl;
 	*this = src;
@@ -60,63 +59,25 @@ FragTrap::~FragTrap()
 	std::cout << "FR4G-TP destructor called" << std::endl;
 }
 
-void FragTrap::rangedAttack(std::string const &target) const
-{
-	std::cout << "FR4G-TP " << name << " attacks " << target <<
-				" at range, causing " << rangedAttackDamage <<
-				" points of damage !" << std::endl;
-}
-
-void FragTrap::meleeAttack(std::string const &target) const
-{
-	std::cout << "FR4G-TP " << name << " attacks " << target <<
-			  " at melee, causing " << meleeAttackDamage <<
-			  " points of damage !" << std::endl;
-}
-
 void FragTrap::lightJabAttack(std::string const &target) const
 {
-	std::cout << "FR4G-TP " << name << " attacks " << target <<
+	std::cout << "ClapTrap " << name << " attacks " << target <<
 			  " at light jab, causing " << lightJabAttackDamage <<
 			  " points of damage !" << std::endl;
 }
 
 void FragTrap::ironSideShootAttack(std::string const &target) const
 {
-	std::cout << "FR4G-TP " << name << " attacks " << target <<
+	std::cout << "ClapTrap " << name << " attacks " << target <<
 			  " at iron side shoot, causing " << ironSideShootAttackDamage <<
 			  " points of damage !" << std::endl;
 }
 
 void FragTrap::ultraAttack(std::string const &target) const
 {
-	std::cout << "FR4G-TP " << name << " attacks " << target <<
+	std::cout << "ClapTrap " << name << " attacks " << target <<
 			  " at ultra attack, causing " << ultraAttackDamage <<
 			  " points of damage !" << std::endl;
-}
-
-
-void FragTrap::takeDamage(uint_t amount)
-{
-	amount = (int)amount - armorDamageReduction >= 0 ? amount - armorDamageReduction : 0;
-
-	std::cout << "FR4G-TP " << name << " was attacked, causing " <<
-	amount << " points of damage !" << std::endl;
-
-	hitPoints = hitPoints - (int)amount >= 0 ? hitPoints - amount : 0;
-	std::cout << "Current FR4G-TP's hit points: " << hitPoints << std::endl;
-}
-
-void FragTrap::beRepaired(uint_t amount)
-{
-	std::cout << "FR4G-TP " << name << " was repaired" << std::endl;
-
-	if (hitPoints + (int)amount < maxHitPoints)
-		hitPoints = hitPoints + amount;
-	else
-		hitPoints = maxHitPoints;
-
-	std::cout << "Current FR4G-TP's hit points: " << hitPoints << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
@@ -127,5 +88,19 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 		(this->*attacks[rand() % 5])(target);
 		energyPoints -= 25;
 	}
-	std::cout << "Current FR4G-TP's energy points: " << energyPoints << std::endl;
+	std::cout << "ClapTrap " << name << " has " << energyPoints << " energy points" << std::endl;
+}
+
+void FragTrap::rangedAttack(std::string const &target) const
+{
+	std::cout << "ClapTrap " << name << " attacks " << target <<
+			  " at range, causing " << rangedAttackDamage <<
+			  " points of damage !" << std::endl;
+}
+
+void FragTrap::meleeAttack(std::string const &target) const
+{
+	std::cout << "ClapTrap " << name << " attacks " << target <<
+			  " at melee, causing " << meleeAttackDamage <<
+			  " points of damage !" << std::endl;
 }

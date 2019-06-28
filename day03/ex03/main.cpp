@@ -15,9 +15,15 @@ int main()
 	FragTrap	frag("Robocop");
 	NinjaTrap	ninja("Cheburek");
 
+	NinjaTrap	lol(ninja);
+
+	lol.ninjaShoebox(frag);
+
 	ninja.ninjaShoebox(frag);
 
 	ninja.ninjaShoebox(ninja);
+
+	ninja.ninjaShoebox(scav);
 
 
 	return (0);

@@ -51,12 +51,6 @@ FragTrap& FragTrap::operator=(FragTrap const &rhs)
 	this->ultraAttackDamage = rhs.ultraAttackDamage;
 	this->armorDamageReduction = rhs.armorDamageReduction;
 
-	this->attacks[0] = rhs.attacks[0];
-	this->attacks[1] = rhs.attacks[1];
-	this->attacks[2] = rhs.attacks[2];
-	this->attacks[3] = rhs.attacks[3];
-	this->attacks[4] = rhs.attacks[4];
-
 	return (*this);
 }
 

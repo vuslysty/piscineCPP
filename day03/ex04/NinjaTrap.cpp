@@ -16,9 +16,6 @@ NinjaTrap::NinjaTrap(std::string const &name) : ClapTrap(name)
 	rangedAttackDamage = 5;
 	armorDamageReduction = 0;
 
-	attacks[0] = &NinjaTrap::rangedAttackDamage;
-	attacks[1] = &NinjaTrap::meleeAttackDamage;
-
 	std::cout << "NinjaTrap constructor called" << std::endl;
 }
 
@@ -52,13 +49,13 @@ NinjaTrap::~NinjaTrap()
 void NinjaTrap::ninjaShoebox(FragTrap &enemy)
 {
 	std::cout << "Ninja " << name << " attacked FR4G-TP " << enemy.getName() << std::endl;
-	enemy.takeDamage(this->*attacks[rand() % 2]);
+	enemy.takeDamage(meleeAttackDamage);
 }
 
 void NinjaTrap::ninjaShoebox(ScavTrap &enemy)
 {
 	std::cout << "Ninja " << name << " attacked SC4V-TP " << enemy.getName() << std::endl;
-	enemy.takeDamage(this->*attacks[rand() % 2]);
+	enemy.takeDamage(meleeAttackDamage);
 }
 
 void NinjaTrap::ninjaShoebox(NinjaTrap &enemy)
@@ -68,6 +65,6 @@ void NinjaTrap::ninjaShoebox(NinjaTrap &enemy)
 	else
 	{
 		std::cout << "Ninja " << name << " attacked ninja " << enemy.name << std::endl;
-		enemy.takeDamage(this->*attacks[rand() % 2]);
+		enemy.takeDamage(meleeAttackDamage);
 	}
 }
