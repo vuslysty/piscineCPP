@@ -2,17 +2,17 @@
 // Created by Vladyslav USLYSTYI on 2019-06-28.
 //
 
-#ifndef PISCINECPP_SCAVTRAP_HPP
-#define PISCINECPP_SCAVTRAP_HPP
+#ifndef PISCINECPP_CLAPTRAP_HPP
+#define PISCINECPP_CLAPTRAP_HPP
 
-
-#include <string>
+#include <iostream>
 
 typedef unsigned int	uint_t;
-#define	CHALLENGE_PHRASES 7
 
-class ScavTrap
+class ClapTrap
 {
+
+protected:
 	std::string	name;
 	int 		hitPoints;
 	int			maxHitPoints;
@@ -23,21 +23,21 @@ class ScavTrap
 	int			rangedAttackDamage;
 	int			armorDamageReduction;
 
-	static std::string	challengePool[CHALLENGE_PHRASES];
-public:
-	ScavTrap();
-	ScavTrap(std::string const &name);
-	ScavTrap(ScavTrap const &src);
-	ScavTrap &operator=(ScavTrap const &rhs);
 
-	~ScavTrap();
+	ClapTrap();
+	ClapTrap(std::string const &name);
+	ClapTrap(ClapTrap const &src);
+	ClapTrap &operator=(ClapTrap const &rhs);
+	~ClapTrap();
+
+public:
 	void	rangedAttack(std::string const &target) const;
 	void	meleeAttack(std::string const &target) const;
 	void	takeDamage(uint_t amount);
 	void	beRepaired(uint_t amount);
 
-	void	challengeNewcomer();
+	std::string	getName();
 };
 
 
-#endif //PISCINECPP_SCAVTRAP_HPP
+#endif //PISCINECPP_CLAPTRAP_HPP

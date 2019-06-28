@@ -77,3 +77,8 @@ void ClapTrap::beRepaired(uint_t amount)
 
 	std::cout << "ClapTrap " << name << " has " << hitPoints << " hit points" << std::endl;
 }
+
+std::string ClapTrap::getName()
+{
+	return (name);
+}
