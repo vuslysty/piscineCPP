@@ -39,6 +39,21 @@ Sorcerer::~Sorcerer()
 std::ostream	&operator<<(std::ostream &o, Sorcerer const &rhs)
 {
 	o << "I am " << rhs.getName() << ", " << rhs.getTitle() <<
-		", and I like ponies !";
+		", and I like ponies !" << std::endl;
 	return (o);
+}
+
+std::string Sorcerer::getName() const
+{
+	return (name);
+}
+
+std::string Sorcerer::getTitle() const
+{
+	return (title);
+}
+
+void Sorcerer::polymorph(Victim const &target)
+{
+	target.getPolymorphed();
 }

@@ -6,6 +6,7 @@
 #define PISCINECPP_SORCERER_HPP
 
 #include <string>
+#include "Victim.hpp"
 
 class Sorcerer
 {
@@ -23,6 +24,8 @@ public:
 
 	std::string	getName() const;
 	std::string	getTitle() const;
+
+	void		polymorph(Victim const &target);
 };
 
 std::ostream	&operator<<(std::ostream &o, Sorcerer const &rhs);

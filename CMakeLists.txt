@@ -40,6 +40,6 @@ set(CMAKE_CXX_STANDARD 98)
 #add_executable(day03_ex04 day03/ex04/FragTrap.cpp day03/ex04/FragTrap.hpp day03/ex04/main.cpp day03/ex04/ScavTrap.cpp day03/ex04/ScavTrap.hpp day03/ex04/ClapTrap.cpp day03/ex04/ClapTrap.hpp day03/ex04/NinjaTrap.cpp day03/ex04/NinjaTrap.hpp day03/ex04/SuperTrap.cpp day03/ex04/SuperTrap.hpp)
 
 #day04
-add_executable(day04_ex00 day04/ex00/Sorcerer.cpp day04/ex00/Sorcerer.hpp)
+add_executable(day04_ex00 day04/ex00/Sorcerer.cpp day04/ex00/Sorcerer.hpp day04/ex00/Victim.cpp day04/ex00/Victim.hpp day04/ex00/Peon.cpp day04/ex00/Peon.hpp day04/ex00/main.cpp)
 #add_executable(day04_ex01)
 #add_executable(day04_ex02)
