@@ -41,5 +41,7 @@ set(CMAKE_CXX_STANDARD 98)
 
 #day04
 #add_executable(day04_ex00 day04/ex00/Sorcerer.cpp day04/ex00/Sorcerer.hpp day04/ex00/Victim.cpp day04/ex00/Victim.hpp day04/ex00/Peon.cpp day04/ex00/Peon.hpp day04/ex00/main.cpp)
-add_executable(day04_ex01 day04/ex01/AWeapon.cpp day04/ex01/AWeapon.hpp day04/ex01/PlasmaRifle.cpp day04/ex01/PlasmaRifle.hpp day04/ex01/PowerFirst.cpp day04/ex01/PowerFirst.hpp day04/ex01/Enemy.cpp day04/ex01/Enemy.hpp day04/ex01/SuperMutant.cpp day04/ex01/SuperMutant.hpp day04/ex01/RadScorpion.cpp day04/ex01/RadScorpion.hpp day04/ex01/Character.cpp day04/ex01/Character.hpp day04/ex01/main.cpp)
-#add_executable(day04_ex02)
+#add_executable(day04_ex01 day04/ex01/AWeapon.cpp day04/ex01/AWeapon.hpp day04/ex01/PlasmaRifle.cpp day04/ex01/PlasmaRifle.hpp day04/ex01/PowerFirst.cpp day04/ex01/PowerFirst.hpp day04/ex01/Enemy.cpp day04/ex01/Enemy.hpp day04/ex01/SuperMutant.cpp day04/ex01/SuperMutant.hpp day04/ex01/RadScorpion.cpp day04/ex01/RadScorpion.hpp day04/ex01/Character.cpp day04/ex01/Character.hpp day04/ex01/main.cpp)
+add_executable(day04_ex02 day04/ex02/Squad.cpp day04/ex02/Squad.hpp day04/ex02/TacticalMarine.cpp day04/ex02/TacticalMarine.hpp day04/ex02/AssaultTerminator.cpp day04/ex02/AssaultTerminator.hpp day04/ex02/ISpaceMarine.hpp day04/ex02/ISquad.hpp day04/ex02/main.cpp)
+#add_executable(day04_ex03)
+#add_executable(day04_ex04)
