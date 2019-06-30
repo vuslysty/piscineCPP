@@ -7,18 +7,13 @@
 
 #include "ISpaceMarine.hpp"
 #include "ISquad.hpp"
+#include "ListSquad.hpp"
 
 class Squad : public ISquad
 {
 	int 			_count;
-	ISpaceMarine	*_spaceMarine;
-	Squad			*_next;
+	ListSquad		*_listSquad;
 
-	mutable	Squad	*curr;
-
-	int 			pushCopy(ISpaceMarine*);
-	Squad(ISpaceMarine *spaceMarine);
-	Squad			*getCurr() const;
 public:
 
 	Squad();
@@ -28,8 +23,7 @@ public:
 
 	int 			getCount() const;
 	ISpaceMarine	*getUnit(int) const;
-	ISpaceMarine	*getSpaceMarine() const;
-	Squad			*getNext() const;
+	ListSquad		*getListSquad() const;
 	int 			push(ISpaceMarine*);
 
 };

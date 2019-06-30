@@ -6,58 +6,37 @@
 #include <iostream>
 #include "Squad.hpp"
 
-Squad::Squad(ISpaceMarine *spaceMarine) : _count(0), _spaceMarine(spaceMarine), _next(nullptr)
-{
-	curr = this;
-}
-
-Squad::Squad() : _count(0), _spaceMarine(nullptr), _next(nullptr)
-{
-	curr = this;
-}
+Squad::Squad() : _count(0), _listSquad(nullptr)
+{}
 
 Squad::Squad(Squad const &src)
 {
+	this->_count = 0;
+	this->_listSquad = nullptr;
+
 	*this = src;
 	return ;
 }
 
-Squad* Squad::getCurr() const
-{
-	return (curr);
-}
-
 Squad& Squad::operator=(Squad const &rhs)
 {
-	Squad	*tmp = rhs.getCurr();
-	this->_next = nullptr;
-	this->_spaceMarine = nullptr;
-	this->_count = 0;
-	this->curr = this;
+	ListSquad	*tmp = rhs.getListSquad();
 
-	this->_spaceMarine = tmp->_spaceMarine->clone();
+	this->_listSquad->delList(&_listSquad);
+	this->_count = rhs.getCount();
 
 	while (tmp)
 	{
-		this->_next->pushCopy(tmp->_spaceMarine);
-		tmp = tmp->_next;
+		_listSquad->push(&_listSquad, tmp->getSpaceMarine()->clone());
+		tmp = tmp->getNext();
 	}
 	return (*this);
 }
 
 Squad::~Squad()
 {
-	Squad	*tmp = curr;
-
-	if (tmp->_spaceMarine)
-	{
-		delete tmp->_spaceMarine;
-		tmp->_spaceMarine = nullptr;
-	}
-	tmp = tmp->_next;
-	if (tmp != nullptr)
-		delete tmp;
-//	delete curr;
+	_count = 0;
+	_listSquad->delList(&_listSquad);
 }
 
 int Squad::getCount() const
@@ -68,87 +47,28 @@ int Squad::getCount() const
 ISpaceMarine* Squad::getUnit(int target) const
 {
 	int i = 0;
-	Squad	*squad;
+	ListSquad	*list = _listSquad;
 
-	squad = curr;
 	if (target >= _count)
 		return (nullptr);
 	else
 	{
 		while (i != target)
 		{
-			squad = squad->_next;
+			list = list->getNext();
 			i++;
 		}
-		return (squad->getSpaceMarine());
+		return (list->getSpaceMarine());
 	}
-}
-
-ISpaceMarine* Squad::getSpaceMarine() const
-{
-	if (this != nullptr)
-		return (_spaceMarine);
-	else
-		return (nullptr);
-}
-
-Squad* Squad::getNext() const
-{
-	return (_next);
-}
-
-bool	isOriginalSpaceMarine(ISpaceMarine *spaceMarine, Squad *squad)
-{
-
-	while (squad->getSpaceMarine())
-	{
-		if (squad->getSpaceMarine() == spaceMarine)
-			return (false);
-		squad = squad->getNext();
-	}
-	return (true);
 }
 
 int Squad::push(ISpaceMarine *spaceMarine)
 {
-	Squad	*newSquad;
-	Squad	*tmp;
-
-	tmp = this;
-	if (spaceMarine && isOriginalSpaceMarine(spaceMarine, this))
-	{
-		if (!_spaceMarine)
-			_spaceMarine = spaceMarine;
-		else
-		{
-			newSquad = new Squad(spaceMarine);
-			while (tmp->_next)
-				tmp = tmp->_next;
-			tmp->_next = newSquad;
-		}
-		_count++;
-	}
+	_count = _listSquad->push(&_listSquad, spaceMarine);
 	return (_count);
 }
 
-int Squad::pushCopy(ISpaceMarine *spaceMarine)
+ListSquad* Squad::getListSquad() const
 {
-	Squad	*newSquad;
-	Squad	*tmp;
-
-	tmp = this;
-	if (spaceMarine && isOriginalSpaceMarine(spaceMarine, this))
-	{
-		if (!_spaceMarine)
-			_spaceMarine = spaceMarine->clone();
-		else
-		{
-			newSquad = new Squad(spaceMarine);
-			while (tmp->_next)
-				tmp = tmp->_next;
-			tmp->_next = newSquad;
-		}
-		_count++;
-	}
-	return (_count);
+	return (_listSquad);
 }
