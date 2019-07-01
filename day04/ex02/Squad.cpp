@@ -23,6 +23,7 @@ Squad& Squad::operator=(Squad const &rhs)
 	ListSquad	*tmp = rhs.getListSquad();
 
 	this->_listSquad->delList(&_listSquad);
+	this->_count = 0;
 	this->_count = rhs.getCount();
 
 	while (tmp)

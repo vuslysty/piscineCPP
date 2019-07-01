@@ -14,6 +14,7 @@ class Squad : public ISquad
 	int 			_count;
 	ListSquad		*_listSquad;
 
+
 public:
 
 	Squad();
