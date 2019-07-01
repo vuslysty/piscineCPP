@@ -1,0 +1,15 @@
+//
+// Created by Vladyslav USLYSTYI on 2019-07-01.
+//
+
+#ifndef PISCINECPP_ROBOTOMYREQUESTFORM_HPP
+#define PISCINECPP_ROBOTOMYREQUESTFORM_HPP
+
+
+class RobotomyRequestForm
+{
+
+};
+
+
+#endif //PISCINECPP_ROBOTOMYREQUESTFORM_HPP

@@ -1,0 +1,15 @@
+//
+// Created by Vladyslav USLYSTYI on 2019-07-01.
+//
+
+#ifndef PISCINECPP_SHRUBBERYCREATIONFORM_HPP
+#define PISCINECPP_SHRUBBERYCREATIONFORM_HPP
+
+
+class ShrubberyCreationForm
+{
+
+};
+
+
+#endif //PISCINECPP_SHRUBBERYCREATIONFORM_HPP

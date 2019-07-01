@@ -51,7 +51,7 @@ set(CMAKE_CXX_STANDARD 98)
 
 #day05
 #add_executable(day05_ex00 day05/ex00/Bureaucrat.cpp day05/ex00/Bureaucrat.hpp day05/ex00/main.cpp)
-add_executable(day05_ex01 day05/ex01/Bureaucrat.cpp day05/ex01/Bureaucrat.hpp day05/ex01/main.cpp day05/ex01/Form.cpp day05/ex01/Form.hpp)
-#add_executable(day05_ex00)
+#add_executable(day05_ex01 day05/ex01/Bureaucrat.cpp day05/ex01/Bureaucrat.hpp day05/ex01/main.cpp day05/ex01/Form.cpp day05/ex01/Form.hpp)
+add_executable(day05_ex02 day05/ex02/Bureaucrat.cpp day05/ex02/Bureaucrat.hpp day05/ex02/main.cpp day05/ex02/Form.cpp day05/ex02/Form.hpp day05/ex02/ShrubberyCreationForm.cpp day05/ex02/ShrubberyCreationForm.hpp day05/ex02/RobotomyRequestForm.cpp day05/ex02/RobotomyRequestForm.hpp day05/ex02/PresidenticalPardonForm.cpp day05/ex02/PresidenticalPardonForm.hpp)
 #add_executable(day05_ex00)
 #add_executable(day05_ex00)
