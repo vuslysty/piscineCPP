@@ -26,8 +26,12 @@ int main()
 			bur->decrementGrade();
 		std::cout << *bur;
 
-		for (int i = 0; i < 12; i++)
-			bur->incrementGrade();
+//		for (int i = 0; i < 12; i++)
+//			bur->incrementGrade();
+//		std::cout << *bur;
+
+		for (int i = 0; i < 200; i++)
+			bur->decrementGrade();
 		std::cout << *bur;
 	}
 	catch (std::exception &e)

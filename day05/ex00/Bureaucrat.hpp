@@ -27,6 +27,7 @@ class Bureaucrat
 
 	class	GradeTooLowException : public std::exception
 	{
+	public:
 //		GradeTooLowException();
 //		GradeTooLowException(GradeTooLowException const &src);
 //		GradeTooLowException &operator=(GradeTooLowException const &rhs);
