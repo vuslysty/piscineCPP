@@ -50,8 +50,8 @@ set(CMAKE_CXX_STANDARD 98)
 #add_executable(rush00 rush00/Object.cpp rush00/Object.hpp)
 
 #day05
-add_executable(day05_ex00 day05/ex00/Bureaucrat.cpp day05/ex00/Bureaucrat.hpp day05/ex00/main.cpp)
-#add_executable(day05_ex00)
+#add_executable(day05_ex00 day05/ex00/Bureaucrat.cpp day05/ex00/Bureaucrat.hpp day05/ex00/main.cpp)
+add_executable(day05_ex01 day05/ex01/Bureaucrat.cpp day05/ex01/Bureaucrat.hpp day05/ex01/main.cpp day05/ex01/Form.cpp day05/ex01/Form.hpp)
 #add_executable(day05_ex00)
 #add_executable(day05_ex00)
 #add_executable(day05_ex00)

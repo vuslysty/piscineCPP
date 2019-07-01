@@ -38,7 +38,7 @@ std::string	Bureaucrat::getName() const
 	return (_name);
 }
 
-uint8_t		Bureaucrat::getGrade() const
+int		Bureaucrat::getGrade() const
 {
 	return (_grade);
 }
@@ -98,6 +98,17 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
-	o << rhs.getName() << ", bureaucrat grade " << (int)rhs.getGrade() << std::endl;
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
 	return o;
+}
+
+void Bureaucrat::singForm(Form const &form) const
+{
+	if (form.getSignedState())
+		std::cout << "Bureaucrat " << _name << " signs form \"" <<
+		form.getName() << "\"" << std::endl;
+	else
+		std::cout << "Bureaucrat " << _name << " cannot sign form \"" <<
+		form.getName() << "\" because his grade - " << _grade
+		<< ", needs grade - " << form.getGradeForSign() << std::endl;
 }
