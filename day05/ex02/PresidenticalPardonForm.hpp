@@ -7,17 +7,20 @@
 
 
 #include <string>
+#include "Form.hpp"
 
-class PresidenticalPardonForm
+class PresidenticalPardonForm : public Form
 {
 
-private:
+public:
 	
 	PresidenticalPardonForm();
-	PresidenticalPardonForm(std::string const &name, int grade);
+	PresidenticalPardonForm(std::string const &target);
 	PresidenticalPardonForm(PresidenticalPardonForm const &src);
 	PresidenticalPardonForm	&operator=(PresidenticalPardonForm const &rhs);
 	~PresidenticalPardonForm();
+
+	void	execute(Bureaucrat const &executor) const;
 };
 
 

@@ -58,7 +58,9 @@ void Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= _gradeForSign)
 		_isSigned = true;
-	bureaucrat.singForm(*this);
+	else
+		throw GradeTooLowException();
+//	bureaucrat.singForm(*this);
 }
 
 std::ostream	&operator<<(std::ostream &o, Form const &rhs)
@@ -73,10 +75,20 @@ std::ostream	&operator<<(std::ostream &o, Form const &rhs)
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Too low grade!");
+	return ("Form: Too low grade!");
 }
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Too high grade!");
+	return ("Form: Too high grade!");
 }
+
+Form::GradeTooHighException::GradeTooHighException() {}
+Form::GradeTooHighException::GradeTooHighException(const Form::GradeTooHighException &) throw() {}
+Form::GradeTooHighException& Form::GradeTooHighException::operator=(const Form::GradeTooHighException &){return *this;}
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+
+Form::GradeTooLowException::GradeTooLowException() {}
+Form::GradeTooLowException::GradeTooLowException(const Form::GradeTooLowException &) throw() {}
+Form::GradeTooLowException& Form::GradeTooLowException::operator=(const Form::GradeTooLowException &){return *this;}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}

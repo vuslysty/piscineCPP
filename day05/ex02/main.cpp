@@ -4,13 +4,17 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "PresidenticalPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
+
 	Bureaucrat	*bur = nullptr;
 	try
 	{
-		bur = new Bureaucrat("Hermes", 121);
+		bur = new Bureaucrat("Hermes", 4);
 		std::cout << *bur;
 	}
 	catch (std::exception &e)
@@ -22,7 +26,7 @@ int main()
 
 	try
 	{
-		form = new Form("25D", 120, 100);
+		form = new ShrubberyCreationForm("Dick");
 		std::cout << *form;
 	}
 	catch (std::exception &e)
@@ -30,20 +34,32 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	if (form)
-		form->beSigned(*bur);
+//	if (bur)
+//		bur->executeForm(*form);
+//
+//	if (bur)
+//		bur->singForm(*form);
 
-	if (form && bur)
-	{
-		bur->incrementGrade();
+	if (bur)
+		bur->executeForm(*form);
 
-		std::cout << *bur;
+	if (bur)
+		bur->singForm(*form);
 
-		form->beSigned(*bur);
+	if (bur)
+		bur->executeForm(*form);
 
-		std::cout << *form;
-
-	}
+//	if (form && bur)
+//	{
+//		bur->incrementGrade();
+//
+//		std::cout << *bur;
+//
+//		bur->singForm(*form);
+//
+//		std::cout << *form;
+//
+//	}
 
 	return (0);
 }

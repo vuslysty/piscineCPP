@@ -54,12 +54,32 @@ bool Form::getSignedState() const
 	return (_isSigned);
 }
 
+std::string Form::getTarget() const
+{
+	return (_target);
+}
+
+void Form::setTarget(std::string const &target)
+{
+	this->_target = target;
+}
+
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= _gradeForSign)
 		_isSigned = true;
-	bureaucrat.singForm(*this);
+	else
+		throw GradeTooLowException();
 }
+
+void Form::execute(Bureaucrat const &executor) const
+{
+	if (executor.getGrade() > _gradeForExecute)
+		throw GradeTooLowException();
+	else if (!_isSigned)
+		throw FormIsNotSigned();
+}
+
 
 std::ostream	&operator<<(std::ostream &o, Form const &rhs)
 {
@@ -73,10 +93,30 @@ std::ostream	&operator<<(std::ostream &o, Form const &rhs)
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Too low grade!");
+	return ("Form: Too low grade!");
 }
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Too high grade!");
+	return ("Form: Too high grade!");
 }
+
+const char* Form::FormIsNotSigned::what() const throw()
+{
+	return ("Form: Is not signed!");
+}
+
+Form::GradeTooHighException::GradeTooHighException() {}
+Form::GradeTooHighException::GradeTooHighException(const Form::GradeTooHighException &) throw() {}
+Form::GradeTooHighException& Form::GradeTooHighException::operator=(const Form::GradeTooHighException &){return *this;}
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+
+Form::GradeTooLowException::GradeTooLowException() {}
+Form::GradeTooLowException::GradeTooLowException(const Form::GradeTooLowException &) throw() {}
+Form::GradeTooLowException& Form::GradeTooLowException::operator=(const Form::GradeTooLowException &){return *this;}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
+
+Form::FormIsNotSigned::FormIsNotSigned() {}
+Form::FormIsNotSigned::FormIsNotSigned(const Form::FormIsNotSigned &) throw() {}
+Form::FormIsNotSigned& Form::FormIsNotSigned::operator=(const Form::FormIsNotSigned &){return *this;}
+Form::FormIsNotSigned::~FormIsNotSigned() throw() {}

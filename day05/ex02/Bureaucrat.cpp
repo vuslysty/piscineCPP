@@ -60,40 +60,40 @@ void Bureaucrat::decrementGrade()
 }
 
 
-//Bureaucrat::GradeTooHighException::GradeTooHighException() {}
+Bureaucrat::GradeTooHighException::GradeTooHighException() {}
 
-//Bureaucrat::GradeTooHighException::GradeTooHighException(const Bureaucrat::GradeTooHighException &) {}
+Bureaucrat::GradeTooHighException::GradeTooHighException(const Bureaucrat::GradeTooHighException &)  throw() {}
 
-//Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(const Bureaucrat::GradeTooHighException &)
-//{
-//	return *this;
-//}
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(const Bureaucrat::GradeTooHighException &)
+{
+	return *this;
+}
 
-//Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
-//{}
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
+{}
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("Too high grade!");
+	return ("Form: Too high grade!");
 }
 
-//Bureaucrat::GradeTooLowException::GradeTooLowException()
-//{}
-//
-//Bureaucrat::GradeTooLowException::GradeTooLowException(
-//		const Bureaucrat::GradeTooLowException &)
-//{}
-//
-//Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(
-//		const Bureaucrat::GradeTooLowException &)
-//{return *this;}
-//
-//Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
-//{}
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+{}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(
+		const Bureaucrat::GradeTooLowException &)   throw()
+{}
+
+Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(
+		const Bureaucrat::GradeTooLowException &)
+{return *this;}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
+{}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("Too low grade!");
+	return ("Form: Too low grade!");
 }
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
@@ -102,13 +102,40 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
 	return o;
 }
 
-void Bureaucrat::singForm(Form const &form) const
+void Bureaucrat::singForm(Form &form) const
 {
-	if (form.getSignedState())
+	try
+	{
+		form.beSigned(*this);
 		std::cout << "Bureaucrat " << _name << " signs form \"" <<
-		form.getName() << "\"" << std::endl;
-	else
+				  form.getName() << "\"" << std::endl;
+	}
+	catch (std::exception &e)
+	{
 		std::cout << "Bureaucrat " << _name << " cannot sign form \"" <<
 		form.getName() << "\" because his grade - " << _grade
 		<< ", needs grade - " << form.getGradeForSign() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << "Bureaucrat " << _name << " executed form \"" <<
+		form.getName() << "\"" << std::endl;
+	}
+//	catch (std::exception &e)
+	catch (Form::GradeTooLowException &e)
+	{
+		std::cout << "Bureaucrat " << _name << " cannot execute form \"" <<
+		form.getName() << "\" because his grade - " << _grade
+		<< ", needs grade - " << form.getGradeForExecute() << std::endl;
+	}
+	catch (Form::FormIsNotSigned &e)
+	{
+		std::cout << "Bureaucrat " << _name << " cannot execute form \"" <<
+		form.getName() << "\" because it isn't signed before" << std::endl;
+	}
 }

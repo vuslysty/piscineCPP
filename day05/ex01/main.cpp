@@ -30,8 +30,8 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	if (form)
-		form->beSigned(*bur);
+	if (bur)
+		bur->singForm(*form);
 
 	if (form && bur)
 	{
@@ -39,7 +39,7 @@ int main()
 
 		std::cout << *bur;
 
-		form->beSigned(*bur);
+		bur->singForm(*form);
 
 		std::cout << *form;
 

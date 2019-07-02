@@ -17,10 +17,10 @@ class Bureaucrat
 	class	GradeTooHighException : public std::exception
 	{
 	public:
-//		GradeTooHighException();
-//		GradeTooHighException(GradeTooHighException const &src);
-//		GradeTooHighException &operator=(GradeTooHighException const &rhs);
-//		~GradeTooHighException() throw();
+		GradeTooHighException();
+		GradeTooHighException(GradeTooHighException const &src) throw();
+		GradeTooHighException &operator=(GradeTooHighException const &rhs);
+		~GradeTooHighException() throw();
 
 		const char 			*what(void) const throw();
 	};
@@ -28,10 +28,10 @@ class Bureaucrat
 	class	GradeTooLowException : public std::exception
 	{
 	public:
-//		GradeTooLowException();
-//		GradeTooLowException(GradeTooLowException const &src);
-//		GradeTooLowException &operator=(GradeTooLowException const &rhs);
-//		~GradeTooLowException() throw();
+		GradeTooLowException();
+		GradeTooLowException(GradeTooLowException const &src) throw();
+		GradeTooLowException &operator=(GradeTooLowException const &rhs);
+		~GradeTooLowException() throw();
 
 		const char 			*what(void) const throw();
 	};

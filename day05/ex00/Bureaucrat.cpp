@@ -12,9 +12,9 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) :
 	_name(name)
 {
 	if (grade < 1)
-		throw (GradeTooHighException());
+		throw GradeTooHighException();
 	else if (grade > 150)
-		throw (GradeTooLowException());
+		throw GradeTooLowException();
 	else
 		this->_grade = grade;
 }
@@ -60,41 +60,49 @@ void Bureaucrat::decrementGrade()
 }
 
 
-//Bureaucrat::GradeTooHighException::GradeTooHighException() {}
-
-//Bureaucrat::GradeTooHighException::GradeTooHighException(const Bureaucrat::GradeTooHighException &) {}
-
-//Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(const Bureaucrat::GradeTooHighException &)
-//{
-//	return *this;
-//}
-
-//Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
-//{}
+Bureaucrat::GradeTooHighException::GradeTooHighException() {}
+//
+Bureaucrat::GradeTooHighException::GradeTooHighException(const Bureaucrat::GradeTooHighException &) throw() {}
+//
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(const Bureaucrat::GradeTooHighException &)
+{
+	return *this;
+}
+//
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
+{}
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Too high grade!");
 }
 
-//Bureaucrat::GradeTooLowException::GradeTooLowException()
-//{}
-//
-//Bureaucrat::GradeTooLowException::GradeTooLowException(
-//		const Bureaucrat::GradeTooLowException &)
-//{}
-//
-//Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(
-//		const Bureaucrat::GradeTooLowException &)
-//{return *this;}
-//
-//Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
-//{}
+
+
+
+
+
+Bureaucrat::GradeTooLowException::GradeTooLowException() {}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(
+		const Bureaucrat::GradeTooLowException &) throw()
+{}
+
+Bureaucrat::GradeTooLowException& Bureaucrat::GradeTooLowException::operator=(
+		const Bureaucrat::GradeTooLowException &)
+{return *this;}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
+{}
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Too low grade!");
 }
+
+
+
+
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
