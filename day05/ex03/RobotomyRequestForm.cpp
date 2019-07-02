@@ -11,7 +11,6 @@ RobotomyRequestForm::RobotomyRequestForm() :
 	struct timeval tv;
 
 	gettimeofday(&tv, nullptr);
-
 	srand((tv.tv_sec * 1000 + tv.tv_usec / 1000));
 }
 
@@ -21,10 +20,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string const &target) :
 	struct timeval tv;
 
 	gettimeofday(&tv, nullptr);
-
-	std::cout << (tv.tv_sec * 1000 + tv.tv_usec / 1000) <<std::endl;
 	srand((tv.tv_sec * 1000 + tv.tv_usec / 1000));
-
 	setTarget(target);
 }
 
@@ -44,10 +40,6 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	struct timeval tv;
-
-	gettimeofday(&tv, nullptr);
-
 	Form::execute(executor);
 	std::cout << "Trrrr dr vruf vruf brrrrrrr..." << std::endl;
 	if (rand() % 2 == 0)
