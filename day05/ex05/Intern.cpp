@@ -26,7 +26,7 @@ Form* Intern::makeForm(std::string const &formName, std::string const &target)
 		form = new ShrubberyCreationForm(target);
 	else if (formName == "robotomy request")
 		form = new RobotomyRequestForm(target);
-	else if (formName == "president pardon")
+	else if (formName == "presidentical pardon")
 		form = new PresidenticalPardonForm(target);
 	else
 	{

@@ -39,6 +39,10 @@ public:
 	void	setSigner(Bureaucrat *signer);
 	void	setExecutor(Bureaucrat *executor);
 
+	Intern		*getIntern() const;
+	Bureaucrat	*getSigner() const;
+	Bureaucrat	*getExecutor() const;
+
 	void	doBureaucracy(std::string formName, std::string target);
 };
 

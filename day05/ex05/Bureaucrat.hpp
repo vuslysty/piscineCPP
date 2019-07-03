@@ -55,9 +55,9 @@ public:
 	void				incrementGrade();
 	void 				decrementGrade();
 
-	void				singForm(Form &) const;
+	void				singForm(Form *) const;
 
-	void				executeForm(Form const &form);
+	void				executeForm(Form *);
 
 };
 

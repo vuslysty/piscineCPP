@@ -102,43 +102,45 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
 	return o;
 }
 
-void Bureaucrat::singForm(Form &form) const
+void Bureaucrat::singForm(Form *form) const
 {
 	try
 	{
-		form.beSigned(*this);
+		form->beSigned(*this);
 		std::cout << "Bureaucrat " << _name << " signs form \"" <<
-				  form.getName() << "\"" << std::endl;
+				  form->getName() << "\"" << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << "Bureaucrat " << _name << " cannot sign form \"" <<
-		form.getName() << "\" because his grade - " << _grade
-		<< ", needs grade - " << form.getGradeForSign() << std::endl;
+		form->getName() << "\" because his grade - " << _grade
+		<< ", needs grade - " << form->getGradeForSign() << std::endl;
+		delete form;
 		throw GradeTooLowException();
 	}
 }
 
-void Bureaucrat::executeForm(Form const &form)
+void Bureaucrat::executeForm(Form *form)
 {
 	try
 	{
-		form.execute(*this);
+		form->execute(*this);
 		std::cout << "Bureaucrat " << _name << " executed form \"" <<
-		form.getName() << "\"" << std::endl;
+		form->getName() << "\"" << std::endl;
 	}
-//	catch (std::exception &e)
 	catch (Form::GradeTooLowException &e)
 	{
 		std::cout << "Bureaucrat " << _name << " cannot execute form \"" <<
-		form.getName() << "\" because his grade - " << _grade
-		<< ", needs grade - " << form.getGradeForExecute() << std::endl;
+		form->getName() << "\" because his grade - " << _grade
+		<< ", needs grade - " << form->getGradeForExecute() << std::endl;
+		delete form;
 		throw Form::GradeTooLowException();
 	}
 	catch (Form::FormIsNotSigned &e)
 	{
 		std::cout << "Bureaucrat " << _name << " cannot execute form \"" <<
-		form.getName() << "\" because it isn't signed before" << std::endl;
+		form->getName() << "\" because it isn't signed before" << std::endl;
+		delete form;
 		throw Form::FormIsNotSigned();
 	}
 }
