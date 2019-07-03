@@ -20,32 +20,31 @@ Intern::~Intern() {}
 
 Form* Intern::makeForm(std::string const &formName, std::string const &target)
 {
-	static std::string	forms[3] =
-			{
-				"shrubbbery creation",
-				"robotomy request",
-				"president pardon"
-			};
-
-	for (int i = 0; i < 3; i++)
-		if (formName == forms[i])
-		{
-			std::cout << "Intern creates \"" << forms[i] << "\" form" << std::endl;
-			if (i == 0)
-				return new ShrubberyCreationForm(target);
-			else if (i == 1)
-				return new RobotomyRequestForm(target);
-			else
-				return new PresidenticalPardonForm(target);
-		}
-
-	std::cout << "Intern couldn't create \"" << formName << "\". Stupid intern..." << std::endl;
-	throw FormCanNotCreate();
+	Form	*form = nullptr;
+	
+	if (formName == "shrubbery creation")
+		form = new ShrubberyCreationForm(target);
+	else if (formName == "robotomy request")
+		form = new RobotomyRequestForm(target);
+	else if (formName == "president pardon")
+		form = new PresidenticalPardonForm(target);
+	else
+	{
+		std::cout << "Intern couldn't create \"" << formName
+				  << "\". Stupid intern..." << std::endl;
+		throw FormCanNotCreate();
+	}
+	std::cout << "Intern creates \"" << form->getName() << "\" form ";
+	std::cout << "(s.grade " << form->getGradeForSign() << ", ex.grade ";
+	std::cout << form->getGradeForExecute() << "). Target: \"" <<
+	target << "\"" << std::endl;
+	
+	return (form);
 }
 
 const char* Intern::FormCanNotCreate::what() const throw()
 {
-	return ("Form not created");
+	return ("Form can't created by intern!");
 }
 
 Intern::FormCanNotCreate::FormCanNotCreate() {}

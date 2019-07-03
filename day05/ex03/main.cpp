@@ -29,7 +29,15 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	form = someIntern.makeForm("robotomy request", "Bender");
+	try
+	{
+		form = someIntern.makeForm("robotomy request", "Bender");
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
 
 	if (hermes && form)
 	{

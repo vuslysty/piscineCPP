@@ -50,11 +50,8 @@ void OfficeBlock::doBureaucracy(std::string formName, std::string target)
 	std::cout << "and some stupid intern" << std::endl << std::endl;
 
 	form = _intern->makeForm(formName, target);
-	std::cout << *form;
 	_signer->singForm(*form);
-	std::cout << *form;
 	_executor->executeForm(*form);
-	std::cout << "End bureaucracy for target: " << form->getTarget() << std::endl;
 	delete (form);
 }
 

@@ -15,7 +15,7 @@ int main()
 {
 
 	Bureaucrat	stupidBur("Zoidberg", 23);
-	Bureaucrat	hermes("Hermes", 6);
+	Bureaucrat	hermes("Hermes", 4);
 	Intern		someIntern;
 
 	OfficeBlock	officeBlock(&someIntern, &stupidBur, &hermes);

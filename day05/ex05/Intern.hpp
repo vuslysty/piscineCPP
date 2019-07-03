@@ -22,7 +22,7 @@ public:
 
 		const char 			*what(void) const throw();
 	};
-
+	
 	Intern();
 	Intern(Intern const &src);
 	Intern	&operator=(Intern const &rhs);

@@ -93,12 +93,12 @@ std::ostream	&operator<<(std::ostream &o, Form const &rhs)
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Too low grade!");
+	return ("Form: Too low grade!");
 }
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("Too high grade!");
+	return ("Form: Too high grade!");
 }
 
 const char* Form::FormIsNotSigned::what() const throw()
