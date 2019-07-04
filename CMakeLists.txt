@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(piscineCPP)
 
 set(CMAKE_CXX_COMPILER clang++)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -std=98")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -std=98 -Wconversion")
 set(CMAKE_CXX_STANDARD 98)
 
 
@@ -58,4 +58,4 @@ set(CMAKE_CXX_STANDARD 98)
 #add_executable(day05_ex05 day05/ex05/Bureaucrat.cpp day05/ex05/Bureaucrat.hpp day05/ex05/main.cpp day05/ex05/Form.cpp day05/ex05/Form.hpp day05/ex05/ShrubberyCreationForm.cpp day05/ex05/ShrubberyCreationForm.hpp day05/ex05/RobotomyRequestForm.cpp day05/ex05/RobotomyRequestForm.hpp day05/ex05/PresidenticalPardonForm.cpp day05/ex05/PresidenticalPardonForm.hpp day05/ex05/Intern.cpp day05/ex05/Intern.hpp day05/ex05/OfficeBlock.cpp day05/ex05/OfficeBlock.hpp day05/ex05/CentralBureaucracy.cpp day05/ex05/CentralBureaucracy.hpp day05/ex05/Queue.cpp day05/ex05/Queue.hpp)
 
 #day06
-add_executable(day06_ex00 day06/Convert.cpp day06/Convert.hpp day06/Fsm/conditions.cpp day06/Fsm/finiteStates.cpp day06/main.cpp)
+add_executable(day06_ex00 day06/ex00/Convert.cpp day06/ex00/Convert.hpp day06/ex00/Fsm/conditions.cpp day06/ex00/Fsm/finiteStates.cpp day06/ex00/main.cpp day06/ex01/main.cpp)

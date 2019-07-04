@@ -80,12 +80,12 @@ void Convert::validate()
 	{
 		if (!fieldsIsEmpty())
 		{
-			if (_data[i] == '\0')
+			if (_data[static_cast<size_t>(i)] == '\0')
 				break ;
 			else
 				throw ValidationError();
 		}
-		state = fsm[state - 1][getCondition(_data[i])];
+		state = fsm[state - 1][getCondition(_data[static_cast<size_t>(i)])];
 		if (state == 0)
 			throw ValidationError();
 		else if (state < 0)
