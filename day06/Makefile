@@ -5,7 +5,7 @@ FLAGS = -Wall -Wextra -Werror
 SRCS =	main.cpp\
 		Convert.cpp\
 		Fsm/conditions.cpp\
-		Fsm/finiteStates
+		Fsm/finiteStates.cpp
 
 
 INC	 =	Convert.hpp
