@@ -3,12 +3,16 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "Convert.hpp"
+#include <string>
+#include <cfloat>
+#include <iomanip>
 
 Convert::Convert() {}
 Convert::Convert(std::string const &data) :
 	_data(data), _isChar(false), _isInt(false), _isFloat(false), _isDouble(false),
-	_tmpLong(0), __tmpLDouble(0)
+	_tmpLong(0), __tmpLDouble(0), _special(false)
 {}
 
 Convert::Convert(Convert const &) {}
@@ -41,19 +45,34 @@ void Convert::validate()
 			{&Convert::itsInt, &Convert::itsDouble, &Convert::itsFloat, &Convert::itsChar};
 	int fsm[10][8] =
 			{
-					{4, 2, 3, 5, -3, 7, -1, 0},
-					{8, 0, 0, 5, -3, 0, 0, 0},
-					{8, 0, 0, 5, -3, 0, 0, 0},
+					{4, 2, 3, 5, 0, 7, -1, 0},
+					{8, 0, 0, 5, 0, 0, 0, 0},
+					{8, 0, 0, 5, 0, 0, 0, 0},
 					{8, 0, 0, 5, -3, 0, -1, 0},
-					{9, 0, 0, 0, -3, 0, -2, 0},
+					{9, 0, 0, 0, 0, 0, -2, 0},
 					{0, 0, 0, 0, 0, 0, 0, 0},
 					{10, 10, 10, 10, 10, 10, 0, 10},
 					{8, 0, 0, 5, -3, 0, -1, 0},
 					{9, 0, 0, 0, -3, 0, -2, 0},
 					{0, 0, 0, 0, 0, -4, 0, 0}
 			};
+
+	std::string	special[] = {"-inf", "-inff", "+inf", "+inff", "inf", "inff", "nan", "nanf"};
 	int i = 0;
 	int state = 1;
+
+	if (_data[0] == '\0')
+		throw ValidationError();
+
+	for (int count = 0; count < 6; count++)
+	{
+		if (_data == special[count])
+		{
+			_special = true;
+			_isDouble = true;
+			return ;
+		}
+	}
 
 	while (1)
 	{
@@ -74,16 +93,81 @@ void Convert::validate()
 	}
 }
 
-void Convert::whatIsIt()
+void Convert::getNumFromStr()
 {
-	if (_isChar)
-		std::cout << "It's CHAR" << std::endl;
-	else if (_isFloat)
-		std::cout << "It's FLOAT" << std::endl;
-	else if (_isDouble)
-		std::cout << "It's DOUBLE" << std::endl;
+	if (_isDouble || _isFloat)
+		__tmpLDouble = std::stold(_data);
+	else if (_isInt)
+		_tmpLong = std::stol(_data);
 	else
-		std::cout << "It's INT" << std::endl;
+		_tmpLong = static_cast<long>(_data[1]);
+}
+
+//void showChar(void *num, bool mod)
+//{
+//	if ()
+//	std::cout << "Char: ";
+//	if (*static_cast<long*>(num) >= CHAR_MIN && *static_cast<long*>(num) <= CHAR_MAX)
+//		if (isgraph(*static_cast<char*>(num)))
+//			std::cout << *static_cast<char*>(num);
+//		else
+//			std::cout << "Non displayable";
+//	else
+//		std::cout << "impossible";
+//	std::cout << std::endl;
+//}
+
+void Convert::showFormatingNB()
+{
+	bool mod = _isDouble || _isFloat;
+
+		std::cout << "char: ";
+		if ((mod ? __tmpLDouble : _tmpLong) >= CHAR_MIN && (mod ? __tmpLDouble : _tmpLong) <= CHAR_MAX)
+			if (isgraph(static_cast<char>((mod ? __tmpLDouble : _tmpLong))))
+				std::cout << "'" << static_cast<char>((mod ? __tmpLDouble : _tmpLong)) << "'";
+			else
+				std::cout << "Non displayable";
+		else
+			std::cout << "impossible";
+		std::cout << std::endl;
+
+		////////////////////////////////
+
+		std::cout << "int: ";
+		if ((mod ? __tmpLDouble : _tmpLong) >= INT_MIN && (mod ? __tmpLDouble : _tmpLong) <= INT_MAX)
+			std::cout << static_cast<int>((mod ? __tmpLDouble : _tmpLong));
+		else
+			std::cout << "impossible";
+		std::cout << std::endl;
+
+		////////////////////////////////
+
+		std::cout << "float: ";
+		if ((mod ? __tmpLDouble : _tmpLong) >= -FLT_MAX && (mod ? __tmpLDouble : _tmpLong) <= FLT_MAX)
+			std::cout << std::fixed << std::setprecision(1) << static_cast<float>((mod ? __tmpLDouble : _tmpLong)) << "f";
+		else
+		{
+			if (_special)
+				std::cout << __tmpLDouble << "f";
+			else
+				std::cout << "impossible";
+		}
+		std::cout << std::endl;
+
+		////////////////////////////////
+
+		std::cout << "double: ";
+		if ((mod ? __tmpLDouble : _tmpLong) >= -DBL_MAX && (mod ? __tmpLDouble : _tmpLong) <= DBL_MAX)
+			std::cout << std::fixed << std::setprecision(1) << static_cast<double>((mod ? __tmpLDouble : _tmpLong));
+		else
+		{
+			if (_special)
+				std::cout << __tmpLDouble;
+			else
+				std::cout << "impossible";
+		}
+		std::cout << std::endl;
+
 }
 
 const char* Convert::ValidationError::what() const throw()

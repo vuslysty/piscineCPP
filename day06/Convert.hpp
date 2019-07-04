@@ -17,6 +17,7 @@ class Convert
 	bool		_isDouble;
 	long 		_tmpLong;
 	long double	__tmpLDouble;
+	bool		_special;
 
 	int		itsInt();
 	int		itsFloat();
@@ -32,7 +33,6 @@ class Convert
 		ValidationError(ValidationError const &src) throw();
 		ValidationError &operator=(ValidationError const &rhs);
 		~ValidationError() throw();
-
 		const char 			*what(void) const throw();
 	};
 
@@ -45,8 +45,9 @@ public:
 	~Convert();
 
 	void	validate();
+	void	getNumFromStr();
+	void	showFormatingNB();
 
-	void	whatIsIt();
 };
 
 bool	isDigit(char c);

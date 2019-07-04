@@ -5,21 +5,25 @@
 #include <iostream>
 #include "Convert.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
-	Convert	convert("''");
-
-	try
+	if (argc == 2)
 	{
-		convert.validate();
+		Convert convert(argv[1]);
 
-		convert.whatIsIt();
+		try
+		{
+			convert.validate();
+			convert.getNumFromStr();
+			convert.showFormatingNB();
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what();
-	}
-
+	else
+		std::cout << "usage: ./convert [[char | int | float | double] value]" << std::endl;
 
 	return (0);
 }
