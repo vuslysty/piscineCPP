@@ -24,6 +24,8 @@ bool	Convert::fieldsIsEmpty()
 	return (!(_isChar || _isInt || _isFloat || _isDouble));
 }
 
+
+
 int 	getCondition(char c)
 {
 	static bool	(*condition[7])(char) = {isDigit, isPlus, isMinus, isDot, isF, isQuote, isNull};
@@ -93,6 +95,7 @@ void Convert::validate()
 	}
 }
 
+
 void Convert::getNumFromStr()
 {
 	if (_isDouble || _isFloat)
@@ -103,19 +106,6 @@ void Convert::getNumFromStr()
 		_tmpLong = static_cast<long>(_data[1]);
 }
 
-//void showChar(void *num, bool mod)
-//{
-//	if ()
-//	std::cout << "Char: ";
-//	if (*static_cast<long*>(num) >= CHAR_MIN && *static_cast<long*>(num) <= CHAR_MAX)
-//		if (isgraph(*static_cast<char*>(num)))
-//			std::cout << *static_cast<char*>(num);
-//		else
-//			std::cout << "Non displayable";
-//	else
-//		std::cout << "impossible";
-//	std::cout << std::endl;
-//}
 
 void Convert::showFormatingNB()
 {
