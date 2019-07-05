@@ -60,4 +60,9 @@ set(CMAKE_CXX_STANDARD 98)
 #day06
 #add_executable(day06_ex00 day06/ex00/Convert.cpp day06/ex00/Convert.hpp day06/ex00/Fsm/conditions.cpp day06/ex00/Fsm/finiteStates.cpp day06/ex00/main.cpp)
 #add_executable(day06_ex01 day06/ex01/main.cpp day06/ex01/Data.hpp)
-add_executable(day06_ex02 day06/ex02/Base.cpp day06/ex02/Base.hpp day06/ex02/A.cpp day06/ex02/A.hpp day06/ex02/B.cpp day06/ex02/B.hpp day06/ex02/C.cpp day06/ex02/C.hpp day06/ex02/main.cpp)
+#add_executable(day06_ex02 day06/ex02/Base.cpp day06/ex02/Base.hpp day06/ex02/A.cpp day06/ex02/A.hpp day06/ex02/B.cpp day06/ex02/B.hpp day06/ex02/C.cpp day06/ex02/C.hpp day06/ex02/main.cpp)
+
+#day07
+add_executable(day07_ex00 day07/ex00/whatever.cpp)
+#add_executable(day07_ex01)
+#add_executable(day07_ex02)
