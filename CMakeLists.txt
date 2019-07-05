@@ -64,5 +64,5 @@ set(CMAKE_CXX_STANDARD 98)
 
 #day07
 #add_executable(day07_ex00 day07/ex00/whatever.cpp)
-add_executable(day07_ex01 day07/ex01/iter.cpp)
-#add_executable(day07_ex02)
+#add_executable(day07_ex01 day07/ex01/iter.cpp)
+add_executable(day07_ex02 day07/ex02/Array.hpp day07/ex02/main.cpp)
