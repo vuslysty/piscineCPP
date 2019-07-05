@@ -63,6 +63,6 @@ set(CMAKE_CXX_STANDARD 98)
 #add_executable(day06_ex02 day06/ex02/Base.cpp day06/ex02/Base.hpp day06/ex02/A.cpp day06/ex02/A.hpp day06/ex02/B.cpp day06/ex02/B.hpp day06/ex02/C.cpp day06/ex02/C.hpp day06/ex02/main.cpp)
 
 #day07
-add_executable(day07_ex00 day07/ex00/whatever.cpp)
-#add_executable(day07_ex01)
+#add_executable(day07_ex00 day07/ex00/whatever.cpp)
+add_executable(day07_ex01 day07/ex01/iter.cpp)
 #add_executable(day07_ex02)
