@@ -70,6 +70,6 @@ set(CMAKE_CXX_STANDARD 98)
 #day07
 #add_executable(day08_ex00 day08/ex00/easyfind.hpp day08/ex00/main.cpp)
 #add_executable(day08_ex01 day08/ex01/span.cpp day08/ex01/span.hpp day08/ex01/main.cpp)
-add_executable(day08_ex02 day08/ex02/MutantStack.cpp day08/ex02/MutantStack.hpp day08/ex02/main.cpp)
-#add_executable(day08_ex03)
+#add_executable(day08_ex02 day08/ex02/MutantStack.cpp day08/ex02/MutantStack.hpp day08/ex02/main.cpp)
+add_executable(day08_ex03 day08/ex03/IBrainFuck.hpp day08/ex03/main.cpp day08/ex03/ActionRight.cpp day08/ex03/ActionRight.hpp day08/ex03/ActionLeft.cpp day08/ex03/ActionLeft.hpp day08/ex03/ActionPlus.cpp day08/ex03/ActionPlus.hpp day08/ex03/Action.cpp day08/ex03/ActionMinus.cpp day08/ex03/ActionMinus.hpp day08/ex03/ActionDot.cpp day08/ex03/ActionDot.hpp day08/ex03/ActionOpen.cpp day08/ex03/ActionOpen.hpp day08/ex03/ActionClose.cpp day08/ex03/ActionClose.hpp)
 #add_executable(day08_ex04)
