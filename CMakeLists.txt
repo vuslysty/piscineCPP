@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(piscineCPP)
 
 set(CMAKE_CXX_COMPILER clang++)
-set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -std=98 -Wconversion")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -std=c++98 -Wconversion")
 set(CMAKE_CXX_STANDARD 98)
 
 
@@ -68,4 +68,8 @@ set(CMAKE_CXX_STANDARD 98)
 #add_executable(day07_ex02 day07/ex02/Array.hpp day07/ex02/main.cpp)
 
 #day07
-add_executable(day08_ex00 day08/ex00/easyfind.hpp day08/ex00/main.cpp)
+#add_executable(day08_ex00 day08/ex00/easyfind.hpp day08/ex00/main.cpp)
+add_executable(day08_ex01 day08/ex01/span.cpp day08/ex01/span.hpp day08/ex01/main.cpp)
+#add_executable(day08_ex02)
+#add_executable(day08_ex03)
+#add_executable(day08_ex04)
