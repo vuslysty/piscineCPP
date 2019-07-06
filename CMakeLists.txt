@@ -69,7 +69,7 @@ set(CMAKE_CXX_STANDARD 98)
 
 #day07
 #add_executable(day08_ex00 day08/ex00/easyfind.hpp day08/ex00/main.cpp)
-add_executable(day08_ex01 day08/ex01/span.cpp day08/ex01/span.hpp day08/ex01/main.cpp)
-#add_executable(day08_ex02)
+#add_executable(day08_ex01 day08/ex01/span.cpp day08/ex01/span.hpp day08/ex01/main.cpp)
+add_executable(day08_ex02 day08/ex02/MutantStack.cpp day08/ex02/MutantStack.hpp day08/ex02/main.cpp)
 #add_executable(day08_ex03)
 #add_executable(day08_ex04)

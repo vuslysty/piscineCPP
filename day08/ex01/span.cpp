@@ -4,6 +4,7 @@
 
 #include "span.hpp"
 #include <stdexcept>
+#include <algorithm>
 
 Span::Span() {}
 

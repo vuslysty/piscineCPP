@@ -12,18 +12,12 @@ template <typename T>
 typename T::iterator		easyfind(T &container, int num)
 {
 	typename T::iterator iter;
-	typename T::iterator iterEnd;
 
-	iter = container.begin();
-	iterEnd = container.end();
-	while (iter != iterEnd)
-	{
-		if (*iter == num)
-			return (iter);
-		else
-			iter++;
-	}
-	throw std::invalid_argument("Your number not found in container");
+	iter = std::find(container.begin(), container.end(), num);
+	if (iter == container.end())
+		throw std::invalid_argument("Your number not found in container");
+
+	return (iter);
 }
 
 #endif //PISCINECPP_EASYFIND_HPP
