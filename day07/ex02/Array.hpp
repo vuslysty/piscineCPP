@@ -41,12 +41,21 @@ public:
 	}
 
 	~Array<T>() {
-		delete [] _array;
+		if (this->_array)
+			delete [] _array;
 	}
 
 	Array<T> &operator=(Array const &rhs) {
+
+		if (this->_array)
+			delete[] _array;
+
 		this->_len = rhs._len;
-		this->_array = new T[_len];
+
+		if (this->_len)
+			this->_array = new T[_len];
+		else
+			this->_array = nullptr;
 
 		for (unsigned int i = 0; i < _len; i++)
 			this->_array[i] = rhs._array[i];

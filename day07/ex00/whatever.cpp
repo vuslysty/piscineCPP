@@ -30,11 +30,36 @@ T		max(T &arg1, T &arg2)
 		return (arg1);
 }
 
+
+class Awesome
+{
+
+public:
+
+	Awesome(int n) : _n(n)
+	{}
+	bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+	bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+	bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+	bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+	bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+	bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+
+	int getNum() const { return _n; }
+
+private:
+
+	int _n;
+
+};
+
+
 int
 main( void )
 {
 	int a = 2;
 	int b = 3;
+
 
 	::swap( a, b );
 	std::cout << "a = " << a << ", b = " << b << std::endl;

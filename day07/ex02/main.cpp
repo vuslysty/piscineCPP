@@ -43,5 +43,18 @@ int main()
 	print(fArr);
 	print(sArr);
 
+	Array<int >	newArr(0);
+
+
+	newArr = iArr;
+
+	iArr[3] = 999999;
+	newArr[7] = 424242;
+
+	std::cout << std::endl;
+
+	print(iArr);
+	print(newArr);
+
 	return (0);
 }
